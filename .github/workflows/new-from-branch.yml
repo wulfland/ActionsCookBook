@@ -7,3 +7,5 @@ jobs:
     steps:
       - run: echo "Triggered by event ${{ github.event_name }}"
       - run: echo "Triggered by actor ${{ github.actor }}"
+      - name: actionlint
+        uses: raven-actions/actionlint@v1.0.2
