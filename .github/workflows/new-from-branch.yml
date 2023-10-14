@@ -1,5 +1,10 @@
 name: A workflow from a branch
+
 on: [pull_request, workflow_dispatch]
+
+permissions:
+      contents: read
+
 
 jobs:
   job1:
@@ -7,5 +12,7 @@ jobs:
     steps:
       - run: echo "Triggered by event ${{ github.event_name }}"
       - run: echo "Triggered by actor ${{ github.actor }}"
+      - name: Checkout
+        uses: actions/checkout@v4.1.0
       - name: actionlint
         uses: raven-actions/actionlint@v1.0.2
