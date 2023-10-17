@@ -12,7 +12,7 @@ jobs:
     name: My first job
     runs-on: ubuntu-latest
     steps:
-      # Unsecure user input...
+      # Unsecure user input that can be used to inject script code:
       - run: echo "${{ github.event.pull_request.title }}"
       - run: |
           echo "Hello ${{ vars.WHO_TO_GREET }} 👋 from ${{ github.actor }}." 
